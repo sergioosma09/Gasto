@@ -1,0 +1,14 @@
+<table>
+    <tr *ngFor="let g of gastosList">
+        <td>
+            {{g.id}}
+        </td>
+        <td>
+            {{g.nombre}}
+        </td>
+        <td (click)="deleteGasto(g)">
+            Borra
+        </td>
+    </tr>
+</table>
+<app-detalle></app-detalle>

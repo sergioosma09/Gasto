@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Style-Type" content="text/css" /> 
+    <title>creacion.component.html</title>
+    <link href="/library/skin/tool_base.css" type="text/css" rel="stylesheet" media="all" />
+    <link href="/library/skin/morpheus-default/tool.css" type="text/css" rel="stylesheet" media="all" />
+    <script type="text/javascript" src="/library/js/headscripts.js"></script>
+    <style>body { padding: 5px !important; }</style>
+  </head>
+  <body>
+
+
+<form [formGroup]="gastoForm" class="login-container" (ngSubmit)="createGasto()">
+
+    <p *ngIf="isSubmitted && formControls.nombre.errors" class="help-block">
+      <span *ngIf="formControls.nombre.errors.required">nombre is required</span>
+  </p>
+
+  <div [ngClass]="{ 'has-error': isSubmitted && formControls.nombre.errors }">
+    <input type="text"  formControlName="nombre">
+  </div>  
+  <p *ngIf="isSubmitted && formControls.cantidad.errors" class="help-block">
+        <span *ngIf="formControls.cantidad.errors.required">Cantidad is required</span>
+    </p>
+
+    <div [ngClass]="{ 'has-error': isSubmitted && formControls.cantidad.errors }">
+      <input type="text" placeholder="Cantidad" formControlName="cantidad">
+    </div>
+
+    <p *ngIf="isSubmitted && formControls.descripcion.errors" class="help-block">
+      <span *ngIf="formControls.descripcion.errors.required">Descripcion is required</span>
+    </p>
+
+    <div [ngClass]="{ 'has-error': isSubmitted && formControls.descripcion.errors }">
+      <input type="descripcion" placeholder="Descripcion" formControlName="descripcion">
+    </div>
+
+    <p *ngIf="isSubmitted && formControls.fecha.errors" class="help-block">
+        <span *ngIf="formControls.fecha.errors.required">Fecha is required</span>
+    </p>
+  
+    <div [ngClass]="{ 'has-error': isSubmitted && formControls.fecha.errors }">
+        <input type="date" placeholder="Fecha" formControlName="fecha">
+    </div>
+
+    <p *ngIf="isSubmitted && formControls.beneficiario.errors" class="help-block">
+        <span *ngIf="formControls.beneficiario.errors.required">Beneficiario is required</span>
+    </p>
+  
+    <div [ngClass]="{ 'has-error': isSubmitted && formControls.beneficiario.errors }">
+        <input type="text" placeholder="Beneficiario" formControlName="beneficiario">
+    </div>
+
+
+    <p>
+      <input type="submit" value="Crea Gasto">
+    </p>
+  </form>
+
+  </body>
+</html>
+
